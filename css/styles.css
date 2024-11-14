@@ -1,0 +1,401 @@
+/* Estilos Generales */
+body {
+    font-family: 'Spartan', sans-serif;
+    background-color: #1c1c1c;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    background-color: #1c1c1c;
+    background-image: url('/images/Background.png'); /* Ruta absoluta a la imagen */
+    background-size: cover; /* Ajusta para que ocupe todo el header */
+    background-position: center;
+    border-bottom: 1px solid #333;
+}
+
+/* Estilo del logo */
+.logo {
+    font-size: 1.8em;
+    position: relative;
+    font-weight: bold;
+}
+
+.logo-gloss {
+    font-family: 'Manrope', sans-serif;
+    color: #ffffff;
+    position: relative;
+}
+
+.logo-glam {
+    font-family: 'Cormorant Garamond', serif;
+    color: #CEA561;
+    position: relative;
+}
+
+.logo-and {
+    font-family: 'Manrope', sans-serif;
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* Destellos alrededor del logo */
+.logo::before,
+.logo::after {
+    content: '';
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-image: url('sparkle.png');
+    background-size: cover;
+    opacity: 0;
+    animation: sparkle 2s infinite ease-in-out;
+}
+
+.logo::before {
+    top: -15px;
+    left: -30px;
+    animation-delay: 0.5s;
+}
+
+.logo::after {
+    bottom: -15px;
+    right: -30px;
+    animation-delay: 1s;
+}
+
+/* Animación para los destellos */
+@keyframes sparkle {
+    0%, 100% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+    50% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Enlaces y botones del encabezado */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1em;
+}
+
+.nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav-links li a:hover {
+    color: #CEA561;
+}
+
+.sign-up {
+    font-family: 'Spartan', sans-serif; /* Asegúrate de usar la fuente principal */
+    background-color: #CEA561;
+    color: #1c1c1c;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-size: 0.9em; /* Ajusta el tamaño de fuente si es necesario */
+}
+
+.sign-up a {
+    color: #1c1c1c;
+    text-decoration: none;
+}
+
+/* Iconos del carrito y búsqueda */
+.header-icons {
+    display: flex;
+    gap: 1em;
+}
+
+.header-icon {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+/* Sección Hero */
+.hero-section {
+    height: 300px; /* Ajusta la altura según sea necesario */
+    background-image: url('/images/Banner.png'); /* Ruta a la imagen */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Sección de Servicios */
+
+.services-section {
+    padding: 2em;
+    text-align: center;
+    background-color: #1c1c1c;
+    background-image: url('/images/Background.png'); /* Imagen general de fondo */
+    background-size: cover;
+    color: #fff;
+    position: relative;
+}
+
+.services-section h2 {
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.services-section p {
+    color: #aaa;
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+/* Slider de tarjetas en Servicios */
+.service-cards-slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1em;
+    padding: 1em;
+    scroll-snap-type: x mandatory;
+}
+
+.service-card {
+    flex: 0 0 250px;
+    padding: 1.5em;
+    background-color: #1c1c1c;
+    border: 1px solid #CEA561;
+    text-align: center;
+    scroll-snap-align: start;
+}
+
+/* Botón desplegable para Servicios */
+.services-button {
+    background: none;
+    color: #fff; /* Mismo color que los otros enlaces */
+    font-family: 'Spartan', sans-serif; /* Asegúrate de usar la misma fuente */
+    font-weight: bold;
+    font-size: 1em; /* Asegúrate de que el tamaño de fuente sea el mismo */
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    text-decoration: none;
+}
+
+.services-button:hover {
+    color: #CEA561; /* Color dorado al pasar el cursor, igual que los otros enlaces */
+}
+
+.services-dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1c1c1c; /* Fondo oscuro */
+    min-width: 160px;
+    box-shadow: none; /* Quita la sombra */
+    z-index: 1;
+    border: 1px solid #333; /* Añade un borde oscuro */
+}
+
+.services-dropdown-content a {
+    color: #CEA561;
+    padding: 0.5em 1em;
+    text-decoration: none;
+    display: block;
+}
+
+.services-dropdown:hover .services-dropdown-content {
+    display: block;
+}
+
+/* Sección de Paquetes */
+.packages-section {
+    padding: 2em;
+    text-align: center;
+}
+
+.package-cards {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+}
+
+.package-card {
+    border: 1px solid #CEA561;
+    padding: 1.5em;
+    text-align: center;
+    width: 250px;
+    background-color: #1c1c1c;
+}
+
+.package-card .price {
+    font-size: 1.5em;
+    color: #CEA561;
+    margin: 0.5em 0;
+}
+
+.choose-plan {
+    background-color: #CEA561;
+    color: #1c1c1c;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Sección de Citas */
+.appointment-section {
+    text-align: center;
+    padding: 2em;
+}
+
+.calendar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em;
+}
+
+.time-slots {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 1em 0;
+}
+
+.time-slot {
+    background-color: #1c1c1c;
+    color: #CEA561;
+    border: 1px solid #CEA561;
+    padding: 0.5em 1em;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.appointment-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.appointment-form input,
+.appointment-form select {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.7em;
+    border-radius: 5px;
+    width: 200px;
+}
+
+/* Botón de cita */
+.book-appointment {
+    background-color: #CEA561;
+    color: #1c1c1c;
+    padding: 0.7em 1.5em;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+/* Sección de Suscripción */
+.subscribe-section {
+    text-align: center;
+    padding: 2em;
+    background-color: #1c1c1c;
+}
+
+.subscribe-section h2 {
+    font-size: 2em;
+    color: #ffffff;
+}
+
+.subscribe-section p {
+    color: #aaa;
+    font-size: 1em;
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 1em;
+}
+
+.subscribe-form {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+.subscribe-form input {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5em;
+    border-radius: 5px;
+    width: 200px;
+}
+
+.subscribe-button {
+    background-color: #CEA561;
+    color: #1c1c1c;
+    padding: 0.5em 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Pie de Página */
+.footer {
+    background-color: #1c1c1c;
+    color: #aaa;
+    padding: 2em 1em;
+}
+
+.footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 2em;
+}
+
+.footer-column {
+    width: 200px;
+}
+
+.footer-column h3 {
+    color: #fff;
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+}
+
+.footer-column p {
+    margin: 0.3em 0;
+    color: #aaa;
+}
+
+.social-icons a img {
+    width: 20px;
+    margin-right: 0.5em;
+}
+
+.footer-bottom {
+    text-align: center;
+    color: #aaa;
+    margin-top: 2em;
+    font-size: 0.9em;
+}
