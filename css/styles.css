@@ -7,6 +7,14 @@ body {
     padding: 0;
 }
 
+/* Línea separadora */
+.separator-line {
+    border: none;
+    height: 1px;
+    background-color: #CEA561;
+    margin: 0;
+}
+
 /* Encabezado */
 .navbar {
     display: flex;
@@ -14,8 +22,8 @@ body {
     align-items: center;
     padding: 1em 2em;
     background-color: #1c1c1c;
-    background-image: url('/images/Background.png'); /* Ruta absoluta a la imagen */
-    background-size: cover; /* Ajusta para que ocupe todo el header */
+    background-image: url('/images/Background.png'); 
+    background-size: cover;
     background-position: center;
     border-bottom: 1px solid #333;
 }
@@ -100,7 +108,7 @@ body {
 }
 
 .sign-up {
-    font-family: 'Spartan', sans-serif; /* Asegúrate de usar la fuente principal */
+    font-family: 'Spartan', sans-serif;
     background-color: #CEA561;
     color: #1c1c1c;
     padding: 0.7em 1.5em;
@@ -109,7 +117,7 @@ body {
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 0.9em; /* Ajusta el tamaño de fuente si es necesario */
+    font-size: 0.9em; 
 }
 
 .sign-up a {
@@ -131,20 +139,19 @@ body {
 
 /* Sección Hero */
 .hero-section {
-    height: 300px; /* Ajusta la altura según sea necesario */
-    background-image: url('/images/Banner.png'); /* Ruta a la imagen */
+    height: 300px; 
+    background-image: url('/images/Banner.png'); 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 /* Sección de Servicios */
-
 .services-section {
     padding: 2em;
     text-align: center;
     background-color: #1c1c1c;
-    background-image: url('/images/Background.png'); /* Imagen general de fondo */
+    background-image: url('/images/Background.png'); 
     background-size: cover;
     color: #fff;
     position: relative;
@@ -179,15 +186,37 @@ body {
     border: 1px solid #CEA561;
     text-align: center;
     scroll-snap-align: start;
+    border-radius: 10px; 
+    transition: transform 0.3s, box-shadow 0.3s; 
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Quitar barra de desplazamiento */
+.service-cards-slider::-webkit-scrollbar {
+    display: none;
+}
+
+/* Centrando contenido */
+.service-card img {
+    margin-bottom: 1em;
+}
+
+.service-card h3 {
+    margin: 0;
+    color: #fff;
 }
 
 /* Botón desplegable para Servicios */
 .services-button {
     background: none;
-    color: #fff; /* Mismo color que los otros enlaces */
-    font-family: 'Spartan', sans-serif; /* Asegúrate de usar la misma fuente */
+    color: #fff; 
+    font-family: 'Spartan', sans-serif; 
     font-weight: bold;
-    font-size: 1em; /* Asegúrate de que el tamaño de fuente sea el mismo */
+    font-size: 1em; 
     border: none;
     cursor: pointer;
     display: flex;
@@ -197,17 +226,17 @@ body {
 }
 
 .services-button:hover {
-    color: #CEA561; /* Color dorado al pasar el cursor, igual que los otros enlaces */
+    color: #CEA561; 
 }
 
 .services-dropdown-content {
     display: none;
     position: absolute;
-    background-color: #1c1c1c; /* Fondo oscuro */
+    background-color: #1c1c1c; 
     min-width: 160px;
-    box-shadow: none; /* Quita la sombra */
+    box-shadow: none; 
     z-index: 1;
-    border: 1px solid #333; /* Añade un borde oscuro */
+    border: 1px solid #333; 
 }
 
 .services-dropdown-content a {
@@ -269,6 +298,12 @@ body {
     margin-bottom: 1em;
 }
 
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+}
+
 .time-slots {
     display: flex;
     justify-content: center;
@@ -283,6 +318,7 @@ body {
     padding: 0.5em 1em;
     cursor: pointer;
     font-weight: bold;
+    border-radius: 8px; 
 }
 
 .appointment-form {
@@ -319,7 +355,7 @@ body {
 .subscribe-section {
     text-align: center;
     padding: 2em;
-    background-color: #1c1c1c;
+    background-color: #333; 
 }
 
 .subscribe-section h2 {
@@ -344,7 +380,7 @@ body {
 .subscribe-form input {
     background-color: #333;
     color: #fff;
-    border: none;
+    border: color(rgb(255, 255, 255));
     padding: 0.5em;
     border-radius: 5px;
     width: 200px;
@@ -377,9 +413,10 @@ body {
     width: 200px;
 }
 
-.footer-column h3 {
-    color: #fff;
-    font-size: 1.2em;
+.footer-column h3 img {
+    width: 100px;
+    height: auto;
+    display: block;
     margin-bottom: 0.5em;
 }
 
@@ -398,4 +435,97 @@ body {
     color: #aaa;
     margin-top: 2em;
     font-size: 0.9em;
+}
+
+.footer-separator {
+    height: 1px;
+    background-color: #fff;
+    margin: 2em 0;
+}
+
+/*calendario*/
+
+.calendar-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #292929;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+#calendar {
+    width: 100%;
+    max-width: 400px;
+    background-color: #1c1c1c;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #CEA561;
+    color: #fff;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    color: #CEA561;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.calendar-header button {
+    background: none;
+    border: none;
+    color: #CEA561;
+    font-size: 1.5em;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.calendar-header button:hover {
+    color: #fff;
+}
+
+.calendar-days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    color: #CEA561;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 10px;
+}
+
+.calendar-day {
+    padding: 10px;
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.calendar-day:hover {
+    background-color: #CEA561;
+    color: #1c1c1c;
+    transform: scale(1.1);
+}
+
+.calendar-day.selected {
+    background-color: #CEA561;
+    color: #1c1c1c;
+}
+
+.calendar-day.disabled {
+    color: #555;
+    pointer-events: none;
+    background-color: transparent;
 }
